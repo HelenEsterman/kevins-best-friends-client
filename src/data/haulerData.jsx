@@ -7,3 +7,12 @@ export const getHaulerByIdWithDock = (haulerId) => {
     (res) => res.json()
   );
 };
+
+export const putEditedHauler = (haulerId, editedHauler) => {
+  const putOptions = {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(editedHauler),
+  };
+  return fetch(`http://localhost:8000/haulers/${haulerId}`, putOptions);
+};
